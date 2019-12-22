@@ -1,0 +1,30 @@
+{
+  "name": "@dwmt/elementforge-theme",
+  "version": "0.0.1-alpha",
+  "description": "",
+  "main": "Theme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwmt/elementforge-theme.git"
+  },
+  "contributors": [
+    {
+      "name": "Lajos Kovács",
+      "email": "lajoskvcs@icloud.com",
+      "url": "https://lajoskvcs.com"
+    },
+    {
+      "name": "Gergely Szabó",
+      "email": "gergely0116@gmail.com",
+      "url": "https://github.com/Baxi0116"
+    }
+  ],
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dwmt/elementforge-theme/issues"
+  },
+  "homepage": "https://github.com/dwmt/elementforge-theme#readme"
+}
