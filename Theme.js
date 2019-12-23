@@ -6,8 +6,9 @@ function Theme (name) {
 Theme.prototype.install = function (container) {
 	container.registerTheme(this.name)
 	Object.keys(this.appearances).forEach((componentKey) => {
+		container.registerComponent(this.name, componentKey)
 		Object.keys(this.appearances[componentKey]).forEach((appearanceKey) => {
-			container.registerAppearance(this.appearances[componentKey][appearanceKey])
+			container.registerAppearance(this.name, componentKey, this.appearances[componentKey][appearanceKey])
 		})
 	})
 }
@@ -23,8 +24,14 @@ Theme.prototype.registerAppearance = function (component, appearanceName, isDefa
 		})
 	}
 
+	let def = isDefault
+	if (!Object.keys(this.appearances[component]).length) {
+		def = true
+	}
+
 	this.appearances[component][appearanceName] = {
-		default: true
+		default: def,
+		name: appearanceName
 	}
 }
 Theme.prototype.registerTemplate = function (component, appearanceName, template) {
