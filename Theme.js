@@ -6,9 +6,10 @@ function Theme (name) {
 Theme.prototype.install = function (container, VueInst) {
 	container.registerTheme(this.name)
 	Object.keys(this.appearances).forEach((componentKey) => {
+		container.registerComponent(this.name, componentKey)
 		Object.keys(this.appearances[componentKey]).forEach((appearanceKey) => {
 			let appearanceObject = this.appearances[componentKey][appearanceKey]
-			container.registerAppearance(appearanceObject)
+			container.registerAppearance(this.name, componentKey, appearanceObject)
 			VueInst.component(appearanceObject.componentName, appearanceObject.vueComponent)
 		})
 	})
@@ -25,12 +26,17 @@ Theme.prototype.registerAppearance = function (component, appearanceName, VueCom
 		})
 	}
 
+	let def = isDefault
+	if (!Object.keys(this.appearances[component]).length) {
+		def = true
+	}
+
 	this.appearances[component][appearanceName] = {
-		default: true,
+		default: def,
+		name: appearanceName,
 		vueComponent: VueComponent,
 		componentName: `${this.name}-${appearanceName}`
 	}
 }
-
 
 module.exports = Theme
