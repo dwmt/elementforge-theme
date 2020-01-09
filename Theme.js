@@ -3,16 +3,18 @@ function Theme (name) {
 	this.appearances = {}
 }
 
-Theme.prototype.install = function (container) {
+Theme.prototype.install = function (container, VueInst) {
 	container.registerTheme(this.name)
 	Object.keys(this.appearances).forEach((componentKey) => {
 		Object.keys(this.appearances[componentKey]).forEach((appearanceKey) => {
-			container.registerAppearance(this.appearances[componentKey][appearanceKey])
+			let appearanceObject = this.appearances[componentKey][appearanceKey]
+			container.registerAppearance(appearanceObject)
+			VueInst.component(appearanceObject.componentName, appearanceObject.vueComponent)
 		})
 	})
 }
 
-Theme.prototype.registerAppearance = function (component, appearanceName, isDefault = false) {
+Theme.prototype.registerAppearance = function (component, appearanceName, VueComponent, isDefault = false) {
 	if (!this.appearances[component]) {
 		this.appearances[component] = {}
 	}
@@ -24,25 +26,11 @@ Theme.prototype.registerAppearance = function (component, appearanceName, isDefa
 	}
 
 	this.appearances[component][appearanceName] = {
-		default: true
+		default: true,
+		vueComponent: VueComponent,
+		componentName: `${this.name}-${appearanceName}`
 	}
 }
-Theme.prototype.registerTemplate = function (component, appearanceName, template) {
-	if (!this.appearances[component] || !this.appearances[component][appearanceName]) {
-		throw new Error('Appearance does not exist!')
-	}
-	this.appearances[component][appearanceName].template = template
-}
-Theme.prototype.registerStyle = function (component, appearanceName, style) {
-	if (!this.appearances[component] || !this.appearances[component][appearanceName]) {
-		throw new Error('Appearance does not exist!')
-	}
-	this.appearances[component][appearanceName].style = style
-}
-Theme.prototype.registerHook = function (component, appearanceName, hook) {
-	if (!this.appearances[component] || !this.appearances[component][appearanceName]) {
-		throw new Error('Appearance does not exist!')
-	}
-}
+
 
 module.exports = Theme
