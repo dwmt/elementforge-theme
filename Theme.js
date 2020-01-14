@@ -35,7 +35,7 @@ Theme.prototype.registerAppearance = function (component, appearanceName, VueCom
 		default: def,
 		name: appearanceName,
 		vueComponent: VueComponent,
-		componentName: `${this.name}-${appearanceName}`
+		componentName: `${this.name}-${component}-${appearanceName}`
 	}
 }
 
