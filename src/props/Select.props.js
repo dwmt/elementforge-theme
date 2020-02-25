@@ -23,7 +23,11 @@ const container = {
 }
 
 const renderable = {
-	...props
+	...props,
+	toggled: {
+		type: Boolean,
+		default: false
+	}
 }
 
 export default {

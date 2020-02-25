@@ -8,11 +8,7 @@ const props = {
 	editable: {
 		type: Boolean,
 		default: true
-	}
-}
-
-const container = {
-	...props,
+	},
 	required: {
 		default: false,
 		type: Boolean
@@ -23,11 +19,16 @@ const container = {
 	}
 }
 
+const container = {
+	...props
+}
+
 const renderable = {
 	...props,
 	editable: {}
 }
 
 export default {
-	
+	container,
+	renderable
 }

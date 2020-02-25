@@ -33,7 +33,8 @@ const renderable = {
 	},
 	isLoading: {
 		default: null
-	}
+	},
+	data: {}
 }
 
 export default {
