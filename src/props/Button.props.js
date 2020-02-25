@@ -1,4 +1,4 @@
-const porps = {
+const props = {
 	data: {
 		type: Object
 	},
