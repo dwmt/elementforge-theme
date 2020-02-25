@@ -1,6 +1,6 @@
-const Theme = require('./Theme')
-const RenderableComponent = require('./RenderableComponent.vue')
-const ContainerComponent = require('./ContainerComponent.vue')
+import Theme from './Theme.js'
+
+import RenderableComponent from './RenderableComponent.vue'
 
 import Button from './props/Button.props.js'
 import Checkbox from './props/Checkbox.props.js'
@@ -19,7 +19,6 @@ import Textarea from './props/Textarea.props.js'
 module.exports = {
 	Theme,
 	RenderableComponent,
-	ContainerComponent,
 	props: {
 		Button,
 		Checkbox,
