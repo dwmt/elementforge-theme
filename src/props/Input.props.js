@@ -16,6 +16,16 @@ const props = {
 	disabled: {
 		default: false,
 		type: Boolean
+	},
+	precision: {
+		type: Number,
+		default: 0
+	},
+	max: {
+		type: Number
+	},
+	min: {
+		type: Number
 	}
 }
 
