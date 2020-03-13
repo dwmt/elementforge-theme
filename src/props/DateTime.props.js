@@ -3,7 +3,19 @@ const props = {
 	type: {
 		type: String,
 		default: 'date'
-	}
+	},
+	label: {
+		type: String,
+		default: ''
+	},
+	required: {
+		default: false,
+		type: Boolean
+	},
+	disabled: {
+		default: false,
+		type: Boolean
+	},
 }
 
 const container = {
