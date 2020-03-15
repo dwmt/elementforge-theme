@@ -15,6 +15,7 @@ import Progress from './props/Progress.props.js'
 import Select from './props/Select.props.js'
 import TagInput from './props/TagInput.props.js'
 import Textarea from './props/Textarea.props.js'
+import Paginator from './props/Paginator.props.js'
 
 module.exports = {
 	Theme,
@@ -32,6 +33,7 @@ module.exports = {
 		Progress,
 		Select,
 		TagInput,
-		Textarea
+		Textarea,
+		Paginator
 	}
 }
