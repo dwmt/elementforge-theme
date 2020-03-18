@@ -1,6 +1,5 @@
 const props = {
 	value: {
-		type: String,
 		default: ''
 	},
 	label: {
