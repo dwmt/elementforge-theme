@@ -16,6 +16,7 @@ import Select from './props/Select.props.js'
 import TagInput from './props/TagInput.props.js'
 import Textarea from './props/Textarea.props.js'
 import Paginator from './props/Paginator.props.js'
+import Weekdays from './props/Weekdays.props.js'
 
 module.exports = {
 	Theme,
@@ -34,6 +35,7 @@ module.exports = {
 		Select,
 		TagInput,
 		Textarea,
-		Paginator
+		Paginator,
+		Weekdays
 	}
 }
