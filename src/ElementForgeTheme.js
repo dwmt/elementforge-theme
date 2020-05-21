@@ -16,6 +16,10 @@ import Select from './props/Select.props.js'
 import TagInput from './props/TagInput.props.js'
 import Textarea from './props/Textarea.props.js'
 import Paginator from './props/Paginator.props.js'
+import Radio from './props/Radio.props.js'
+import RadioGroup from './props/RadioGroup.props.js'
+import Sorter from './props/Sorter.props.js'
+import Autocomplete from './props/Autocomplete.props.js'
 
 module.exports = {
 	Theme,
@@ -34,6 +38,10 @@ module.exports = {
 		Select,
 		TagInput,
 		Textarea,
-		Paginator
+		Paginator,
+		Radio,
+		RadioGroup,
+		Sorter,
+		Autocomplete
 	}
 }
