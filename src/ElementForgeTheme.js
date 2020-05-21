@@ -20,6 +20,7 @@ import Radio from './props/Radio.props.js'
 import RadioGroup from './props/RadioGroup.props.js'
 import Sorter from './props/Sorter.props.js'
 import Autocomplete from './props/Autocomplete.props.js'
+import Weekdays from './props/Weekdays.props.js'
 
 module.exports = {
 	Theme,
@@ -42,6 +43,7 @@ module.exports = {
 		Radio,
 		RadioGroup,
 		Sorter,
-		Autocomplete
+		Autocomplete,
+		Weekdays
 	}
 }
