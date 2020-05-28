@@ -5,6 +5,10 @@ const props = {
 	},
 	type: {},
 	value: {},
+	displayValue: {
+		type: String,
+		default: ''
+	},
 	editable: {
 		type: Boolean,
 		default: true
